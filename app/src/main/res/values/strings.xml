@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Calculadora</string>
     <string name="button1">1</string>
+    <string name="textMemoria">Mem:</string>
+    <string name="enviar">SEND</string>
+    <string name="resultado">Resultado</string>
 </resources>
