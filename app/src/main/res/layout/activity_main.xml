@@ -19,6 +19,7 @@
 
     <Button
         android:id="@+id/btn0"
+        android:onClick="onClickNum"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -32,6 +33,7 @@
 
     <Button
         android:id="@+id/btnigual"
+        android:onClick="onClickIgual"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -45,6 +47,7 @@
 
     <Button
         android:id="@+id/btn1"
+        android:onClick="onClickNum"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -255,9 +258,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btndiv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnMmenos"
-        app:layout_constraintTop_toBottomOf="@+id/resultado"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/btnMmenos" />
 
     <Button
         android:id="@+id/btnMmenos"
@@ -279,6 +280,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="32dp"
         android:text="@string/textMemoria"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/operacion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -288,9 +290,6 @@
         android:id="@+id/bSend"
         android:layout_width="96dp"
         android:layout_height="45dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
         android:drawableStart="@android:drawable/ic_menu_send"
         android:drawableLeft="@android:drawable/ic_menu_send"
         android:text="@string/enviar"
@@ -299,30 +298,38 @@
 
     <TextView
         android:id="@+id/resultado"
-        android:layout_width="354dp"
-        android:layout_height="95dp"
+        android:layout_width="364dp"
+        android:layout_height="57dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
         android:text="@string/resultado"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMmas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/operacion" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/operacion"
-        android:layout_width="361dp"
-        android:layout_height="46dp"
+        android:layout_width="369dp"
+        android:layout_height="49dp"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="10dp"
         android:text=""
+        android:textColor="#000000"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/resultado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

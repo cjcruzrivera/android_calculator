@@ -25,5 +25,5 @@
     <string name="buttonMmenos">M-</string>
     <string name="textMemoria">Mem:</string>
     <string name="enviar">SEND</string>
-    <string name="resultado">Resultado</string>
+    <string name="resultado">Resultado: </string>
 </resources>
