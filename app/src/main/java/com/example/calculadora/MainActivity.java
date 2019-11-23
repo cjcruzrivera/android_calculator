@@ -30,15 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickNum(View view)
     {
+        int id = view.getId();
         final TextView op =(TextView)findViewById(R.id.operacion);
-        final Button btn0 =(Button) findViewById(R.id.btn0);
-        final Button btn1 =(Button) findViewById(R.id.btn1);
+        final Button btn =(Button) findViewById(id);
 
-        text = btn0.getText();
-        text = btn1.getText();
+        text = btn.getText();
         op.append(text);
-        //op.setText(text);
-        text = "";
     }
 
     public void onClickIgual(View view)
@@ -57,5 +54,10 @@ public class MainActivity extends AppCompatActivity {
         res = s1 + s2;
 
         return res;
+    }
+
+    public void onClickClean(View view) {
+        final TextView op =(TextView)findViewById(R.id.operacion);
+        op.setText("");
     }
 }
