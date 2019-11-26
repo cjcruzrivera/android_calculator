@@ -1,5 +1,6 @@
 package com.example.calculadora;
 
+import java.lang.Math;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    double res = 0;
+    double result = 0;
     String valor1 = "";
     String valor2 = "";
     String operacion;
@@ -19,16 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*
-        Esto que haria?
-        final TextView oper =(TextView)findViewById(R.id.operacion);
-        String operation = oper.getText().toString();
-
-        char v1 = operation.charAt(0);
-        char v2 = operation.charAt(2);
-
-        valor1 = String.valueOf(v1);
-        valor2 = String.valueOf(v2); */
     }
 
     public void onClickNum(View view){
@@ -41,23 +32,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickIgual(View view){
-        final TextView result =(TextView)findViewById(R.id.resultado);
+        final TextView res =(TextView)findViewById(R.id.resultado);
         final TextView op =(TextView)findViewById(R.id.operacion);
-        valor2 = op.getText().toString();
 
-        switch (operacion){
-            case "+":
-                sum();
-                break;
-            case "-":
-                resta();
-                break;
+        if (valor1 == ""){
+            res.setText(valor1);
+        } else {
+            valor2 = op.getText().toString();
 
+            switch (operacion){
+                case "+":
+                    sum();
+                    break;
+                case "-":
+                    resta();
+                    break;
+                case "*":
+                    mult();
+                    break;
+                case "/":
+                    division();
+                    break;
+                case "^":
+                    potencia();
+                    break;
+                case "√":
+                    raiz();
+                    break;
+            }
+
+            op.setText("");
+            valor1 = String.valueOf(result);
+            res.setText(valor1);
+            valor2 = "";
+            operacion = "";
         }
-        op.setText("");
-        valor1 = String.valueOf(res);
-        result.setText(valor1);
-        valor2="";
         //float r = sum();
         //result.setText(String.valueOf(r));
         //result.append(text);
@@ -67,11 +76,14 @@ public class MainActivity extends AppCompatActivity {
     public void onClickClean(View view) {
         final TextView op = findViewById(R.id.operacion);
         final TextView res = findViewById(R.id.resultado);
-        res.setText("");
+
+        res.setText("Resultado:");
         op.setText("");
+
         valor1 = "";
         valor2 = "";
         operacion = "";
+        result = 0;
     }
 
     public void onClickSum(View view) {
@@ -96,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickResta(View view){
         final TextView op = findViewById(R.id.operacion);
         final TextView res = findViewById(R.id.resultado);
+
         if (valor1 == "" && valor2 == ""){
             valor1 = op.getText().toString();
         }else {
@@ -111,30 +124,157 @@ public class MainActivity extends AppCompatActivity {
         res.setText(valor1 + " - ");
     }
 
+    public void onClickMult(View view){
+        final TextView op = findViewById(R.id.operacion);
+        final TextView res = findViewById(R.id.resultado);
+
+        if (valor1 == "" && valor2 == ""){
+            valor1 = op.getText().toString();
+        }else {
+            if(operacion==""){
+                valor1 = String.valueOf(mult());
+                valor2 = op.getText().toString();
+            }else{
+                onClickIgual(view);
+            }
+        }
+        operacion="*";
+        op.setText("");
+        res.setText(valor1 + " * ");
+    }
+
+    public void onClickDivision(View view){
+        final TextView op = findViewById(R.id.operacion);
+        final TextView res = findViewById(R.id.resultado);
+
+        if (valor1 == "" && valor2 == ""){
+            valor1 = op.getText().toString();
+        }else {
+            if(operacion==""){
+                valor1 = String.valueOf(division());
+                valor2 = op.getText().toString();
+            }else{
+                onClickIgual(view);
+            }
+        }
+        operacion="/";
+        op.setText("");
+        res.setText(valor1 + " / ");
+    }
+
+    public void onClickPotencia(View view){
+        final TextView op = findViewById(R.id.operacion);
+        final TextView res = findViewById(R.id.resultado);
+
+        if (valor1 == "" && valor2 == ""){
+            valor1 = op.getText().toString();
+        }else {
+            if(operacion==""){
+                valor1 = String.valueOf(potencia());
+                valor2 = op.getText().toString();
+            }else{
+                onClickIgual(view);
+            }
+        }
+
+        operacion="^";
+        op.setText("");
+        res.setText(valor1 + " ^ ");
+    }
+
+    public void onClickRaiz(View view){
+        final TextView op = findViewById(R.id.operacion);
+        final TextView res = findViewById(R.id.resultado);
+
+        if (valor1 == ""){
+            valor1 = op.getText().toString();
+        }else {
+            if(operacion==""){
+                valor1 = String.valueOf(raiz());
+            }else{
+                onClickIgual(view);
+            }
+        }
+
+        operacion="√";
+        op.setText("√" + valor1);
+    }
+
     private double resta(){
         try {
             double s1 = Double.parseDouble(valor1);
             double s2 = Double.parseDouble(valor2);
-            res = s1 - s2;
+            result = s1 - s2;
         }catch (NumberFormatException ex){
 
         }
 
-        return res;
+        return result;
     }
 
-    private double sum()
-    {
+    private double sum(){
         try {
             double s1 = Double.parseDouble(valor1);
             double s2 = Double.parseDouble(valor2);
-            res = s1 + s2;
+            result = s1 + s2;
 
         }catch (NumberFormatException exp){
 
         }
 
-        return res;
+        return result;
+    }
+
+    private double mult(){
+        try {
+            double s1 = Double.parseDouble(valor1);
+            double s2 = Double.parseDouble(valor2);
+            result = s1 * s2;
+
+        }catch (NumberFormatException exp){
+
+        }
+
+        return result;
+    }
+
+    private double division(){
+        try {
+            double s1 = Double.parseDouble(valor1);
+            double s2 = Double.parseDouble(valor2);
+            result = s1 / s2;
+
+        }catch (NumberFormatException exp){
+
+        }
+
+        return result;
+    }
+
+    private double potencia(){
+        try {
+            double s1 = Double.parseDouble(valor1);
+            double s2 = Double.parseDouble(valor2);
+            result = Math.pow(s1,s2);
+
+        }catch (NumberFormatException exp){
+
+        }
+
+        return result;
+    }
+
+    private double raiz(){
+        try {
+            double s1 = Double.parseDouble(valor1);
+            //double s2 = Double.parseDouble(valor2);
+            result = Math.sqrt(s1);
+
+        }catch (NumberFormatException exp){
+
+        }
+
+        return result;
     }
 
 }

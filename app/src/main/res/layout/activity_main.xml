@@ -179,6 +179,7 @@
 
     <Button
         android:id="@+id/btnmult"
+        android:onClick="onClickMult"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -204,6 +205,7 @@
 
     <Button
         android:id="@+id/btnraiz"
+        android:onClick="onClickRaiz"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -214,6 +216,7 @@
 
     <Button
         android:id="@+id/btnpotencia"
+        android:onClick="onClickPotencia"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
@@ -224,6 +227,7 @@
 
     <Button
         android:id="@+id/btndiv"
+        android:onClick="onClickDivision"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_margin="4dp"
