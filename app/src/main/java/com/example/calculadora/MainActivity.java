@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     String valor2 = "";
     String operacion;
     CharSequence text = "";
+    String autor1 = "Camilo José Cruz Rivera";
+    String autor2 = "Diana Melissa Millares Gutiérrez";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,7 +200,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         operacion="√";
-        op.setText("√" + valor1);
+        res.setText("√" + valor1);
+    }
+
+    public void onClickSend(View view){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+
+        String mensaje = "Resultado: " + String.valueOf(result) + "\n" + autor1 + "\n" + autor2;
+        intent.putExtra(Intent.EXTRA_TEXT, mensaje);//
+
+        startActivity(intent);
     }
 
     private double resta(){

@@ -304,6 +304,7 @@
 
     <Button
         android:id="@+id/bSend"
+        android:onClick="onClickSend"
         android:layout_width="96dp"
         android:layout_height="45dp"
         android:drawableStart="@android:drawable/ic_menu_send"
