@@ -92,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         final TextView op = (TextView) findViewById(R.id.operacion);
+        final TextView res = (TextView) findViewById(R.id.resultado);
 
         outState.putString("opText", op.getText().toString());
+        outState.putString("resText", res.getText().toString());
         outState.putDouble("res", result);
         outState.putString("operacion", operacion);
         outState.putString("valor1", valor1);
