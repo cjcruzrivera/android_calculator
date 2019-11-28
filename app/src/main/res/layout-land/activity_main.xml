@@ -20,7 +20,7 @@
 
     <Button
         android:id="@+id/btnigual"
-        android:onClick="onClickNum"
+        android:onClick="onClickIgual"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="155dp"
         android:layout_height="50dp"
@@ -154,6 +154,7 @@
 
     <Button
         android:id="@+id/btnmas"
+        android:onClick="onClickSum"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -165,6 +166,7 @@
 
     <Button
         android:id="@+id/btnmenos"
+        android:onClick="onClickResta"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -176,6 +178,7 @@
 
     <Button
         android:id="@+id/btnmult"
+        android:onClick="onClickMult"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -187,6 +190,7 @@
 
     <Button
         android:id="@+id/btn0"
+        android:onClick="onClickNum"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -200,6 +204,7 @@
 
     <Button
         android:id="@+id/btnc"
+        android:onClick="onClickClean"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -211,6 +216,7 @@
 
     <Button
         android:id="@+id/btnraiz"
+        android:onClick="onClickRaiz"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -222,6 +228,7 @@
 
     <Button
         android:id="@+id/btnpotencia"
+        android:onClick="onClickPotencia"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -233,6 +240,7 @@
 
     <Button
         android:id="@+id/btndiv"
+        android:onClick="onClickDivision"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -244,6 +252,7 @@
 
     <Button
         android:id="@+id/btnMC"
+        android:onClick="onClickMC"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -257,6 +266,7 @@
 
     <Button
         android:id="@+id/btnMR"
+        android:onClick="onClickMR"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -270,6 +280,7 @@
 
     <Button
         android:id="@+id/btnMmas"
+        android:onClick="onClickMMas"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -283,6 +294,7 @@
 
     <Button
         android:id="@+id/btnMmenos"
+        android:onClick="onClickMMenos"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -309,6 +321,7 @@
 
     <Button
         android:id="@+id/bSend"
+        android:onClick="onClickSend"
         android:layout_width="96dp"
         android:layout_height="45dp"
         android:drawableStart="@android:drawable/ic_menu_send"
